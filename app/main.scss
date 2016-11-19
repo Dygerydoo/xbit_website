@@ -1,3 +1,236 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+
+@mixin mq($point) {
+  @if $point == mobile {
+    @media (max-width: 640px) { @content; }
+  } @else if $point == tablet {
+    @media (min-width: 640px) and (max-width: 850px) { @content; }
+  } @else if $point == min-desktop {
+    @media (min-width: 1024px) { @content; }
+  }
+}
+
+$font-primary: 'Noto Sans', Helvetica, Arial, sans-serif;
+
+$white: #fff;
+$black: #000;
+
+@mixin list-clean {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 body {
-  background-color: skyblue;
+  background-color: $white;
+  font-family: $font-primary;
+  margin: 0;
+}
+
+footer {
+  background: $black;
+  color: $white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+
+  p { flex-basis: 100%; }
+
+  .xtb-Copyright {
+    font-size: .75em;
+  }
+}
+
+.xbt-MainLogo {
+  height: auto;
+  max-width: 300px;
+  width: 100%;
+}
+
+.xbt-Navigation {
+  align-self: flex-end;
+  display: flex;
+
+  @include mq(mobile) {
+    align-self: flex-start;
+    background: #333;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+  }
+}
+
+.xbt-MobileMenu_Show {
+  @include mq(mobile) {
+    display: block;
+    width: 30%;
+  }
+  background: #333;
+  color: $white;
+  display: none;
+  font-weight: bold;
+  padding: 1em;
+  position: relative;
+  text-decoration: none;
+}
+
+.xbt-NavigationList {
+  @include list-clean;
+  color: $white;
+  display: flex;
+
+  @include mq(mobile) {
+    flex-direction: column;
+  }
+}
+
+.xbt-Navigation_Item {
+  margin-right: 1em;
+  padding: 2em .5em .5em;
+
+  @include mq(mobile) {
+    background: #555;
+    border-top: 1px solid #333;
+    margin: 0;
+    padding: 1em;
+  }
+
+  &.active {
+    @include mq(mobile) {
+      border-left: 5px solid #ffc107;
+      border-bottom: 0;
+    }
+
+    border-bottom: 3px solid #ffc107;
+  }
+}
+
+.xbt-HeroBanner {
+  box-shadow: inset 0 0 0 100em rgba(0,0,0,.6);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  @include mq(mobile) {
+    &::before {
+      background-image: url('../images/hero_bg.jpg');
+      background-size: cover;
+      content: '';
+      height: 100vh;
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+}
+
+.xbt-MainSSSSS {
+  margin: auto;
+  text-align: center;
+}
+
+.xbt-Arrow-down {
+  align-self: center;
+  background-image: url('../images/arrow_down.svg');
+  background-size: cover;
+  height: 30px;
+  margin-bottom: 2em;
+  width: 30px;
+}
+
+.xbt-HeroHeading {
+  color: $white;
+}
+
+[class^="xbt-Section"] {
+  display: flex;
+  align-items: center;
+  height: 500px;
+}
+
+.xbt-Section-one {
+  background: url('../images/s1.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.xbt-Section-two {
+  background: url('../images/s2.jpg') center center no-repeat;
+  background-size: cover;
+  justify-content: flex-end;
+}
+
+.xbt-Section-three {
+  background: url('../images/s3.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.text-block {
+  color: $white;
+  margin-right: 4em;
+  max-width: 470px;
+}
+
+.xbt-HeroBanner_Video {
+  height: auto;
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  z-index: -1;
+
+  @include mq(mobile) {
+    display: none;
+  }
+}
+
+.fuckin-block {
+  background: $white;
+  box-shadow: 1px 0 10px -4px;
+  max-width: 500px;
+  min-width: 250px;
+  margin-left: 4em;
+  padding: 1em;
+  position: relative;
+
+  @include mq(mobile) {
+    margin: 0 auto;
+    max-width: 250px;
+  }
+
+  h1 {
+    margin-bottom: 1.5em;
+  }
+
+  &::after {
+    background: $white;
+    bottom: -40px;
+    content: '';
+    display: block;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    width: 40%;
+  }
+
+  &::before {
+    background: $white;
+    bottom: -40px;
+    box-shadow: 0 3px 8px -5px;
+    content: '';
+    display: block;
+    height: 40px;
+    position: absolute;
+    right: 12px;
+    transform: skew(30deg);
+    width: 40%;
+  }
 }

@@ -13,5 +13,49 @@ html(lang='en')
       require('initialize');
   body
     #app
-      h1
-        | Hola Fran
+      section.xbt-HeroBanner
+        nav.xbt-Navigation
+          a(href="" class="xbt-MobileMenu_Show") Menú
+          ul.xbt-NavigationList
+            li.xbt-Navigation_Item.active
+              | Inicio
+            li.xbt-Navigation_Item
+              | Productos
+            li.xbt-Navigation_Item
+              | Idea
+            li.xbt-Navigation_Item
+              | Contacto
+        
+        
+        video(class="xbt-HeroBanner_Video" loop='', muted='', autoplay='', poster='img/hero_bg.jpg')
+          //- source(src='video/big_buck_bunny.webm', type='video/webm')
+          source(src='video/vr.mp4', type='video/mp4')
+          //- source(src='video/big_buck_bunny.ogv', type='video/ogg')
+
+        .xbt-MainSSSSS
+          img.xbt-MainLogo(src='../images/logo.png')
+          
+          h2.xbt-HeroHeading Frase descriptiva aquí
+
+        a(class="xbt-Arrow-down" href="#first-section")
+
+      section.xbt-Section-one
+        .fuckin-block
+          h1 Asesoramiento Personalizado
+          p Desde el primer dia XBIT entrega un asesoramiento personalizado, con personal cualificado y vasta experiencia en sistemas de Digital Signage el cual les brindará la mejor solución a sus necesidades.
+
+      section.xbt-Section-two
+        .text-block
+          h1 Asesoramiento Personalizado
+          p Desde el primer dia XBIT entrega un asesoramiento personalizado, con personal cualificado y vasta experiencia en sistemas de Digital Signage el cual les brindará la mejor solución a sus necesidades.
+
+
+      section.xbt-Section-three
+        .fuckin-block
+          h1 Asesoramiento Personalizado
+          p Desde el primer dia XBIT entrega un asesoramiento personalizado, con personal cualificado y vasta experiencia en sistemas de Digital Signage el cual les brindará la mejor solución a sus necesidades.
+
+      footer
+        p Dirección del negocio
+        p 1234123412341
+        p.xtb-Copyright Copyright 2016 XBIT. All rights reserved.

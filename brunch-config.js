@@ -10,5 +10,10 @@ module.exports = {
   },
 
   plugins: {
+    postcss: {
+      processors: [
+        require('autoprefixer')(['last 8 versions'])
+      ]
+    }
   }
 };
