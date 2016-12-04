@@ -52,10 +52,15 @@ footer {
 .xbt-Navigation {
   align-self: flex-end;
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  padding-bottom: 1em;
 
   @include mq(mobile) {
     align-self: flex-start;
-    background: #333;
     flex-direction: column;
     height: 100vh;
     position: fixed;
@@ -67,30 +72,50 @@ footer {
 .xbt-MobileMenu_Show {
   @include mq(mobile) {
     display: block;
-    width: 30%;
+    background: rgba(0, 0, 0, .75);
+    margin: 0;
   }
-  background: #333;
+
   color: $white;
   display: none;
   font-weight: bold;
   padding: 1em;
   position: relative;
   text-decoration: none;
+
+  span {
+    background: #333;
+    border: 1px solid $white;
+    padding: .5em;
+    border-radius: 2px;
+    cursor: pointer;
+  }
 }
 
 .xbt-NavigationList {
   @include list-clean;
-  color: $white;
   display: flex;
+  max-height: 0;
+  transition: max-height 500ms linear;
+  overflow: hidden;
 
   @include mq(mobile) {
     flex-direction: column;
   }
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &.active {
+    max-height: 500px;
+  }
 }
 
 .xbt-Navigation_Item {
-  margin-right: 1em;
-  padding: 2em .5em .5em;
+  margin-left: 1em;
+  padding: 1em .5em .5em;
 
   @include mq(mobile) {
     background: #555;
@@ -174,6 +199,11 @@ footer {
   color: $white;
   margin-right: 4em;
   max-width: 470px;
+
+  @include mq(mobile) {
+    max-width: 320px;
+    margin-right: inherit;
+  }
 }
 
 .xbt-HeroBanner_Video {
