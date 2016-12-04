@@ -95,12 +95,13 @@ footer {
 .xbt-NavigationList {
   @include list-clean;
   display: flex;
-  max-height: 0;
-  transition: max-height 500ms linear;
-  overflow: hidden;
+
 
   @include mq(mobile) {
     flex-direction: column;
+    max-height: 0;
+    transition: max-height 500ms linear;
+    overflow: hidden;
   }
 
   a {
