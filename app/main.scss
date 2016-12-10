@@ -100,7 +100,7 @@ footer {
   @include mq(mobile) {
     flex-direction: column;
     max-height: 0;
-    transition: max-height 500ms linear;
+    transition: max-height 300ms ease-in-out;
     overflow: hidden;
   }
 
