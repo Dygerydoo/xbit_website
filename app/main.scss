@@ -51,6 +51,7 @@ footer {
 
 .xbt-Navigation {
   align-self: flex-end;
+  justify-content: center;
   display: flex;
   position: fixed;
   top: 0;
@@ -60,6 +61,7 @@ footer {
   padding-bottom: 1em;
 
   @include mq(mobile) {
+    justify-content: flex-start;
     align-self: flex-start;
     flex-direction: column;
     height: 100vh;
@@ -95,9 +97,11 @@ footer {
 .xbt-NavigationList {
   @include list-clean;
   display: flex;
+  margin-top: 3em;
 
 
   @include mq(mobile) {
+    margin-top: 0;
     flex-direction: column;
     max-height: 0;
     transition: max-height 300ms ease-in-out;
@@ -117,6 +121,7 @@ footer {
 .xbt-Navigation_Item {
   margin-left: 1em;
   padding: 1em .5em .5em;
+  text-transform: uppercase;
 
   @include mq(mobile) {
     background: #555;
@@ -166,12 +171,27 @@ footer {
   background-image: url('../images/arrow_down.svg');
   background-size: cover;
   height: 30px;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   width: 30px;
 }
 
 .xbt-HeroHeading {
   color: $white;
+  position: relative;
+  top: 6em;
+
+  span {
+    margin-left: 2em;
+    padding-right: 2em;
+
+    &:not(:last-child) {
+      border-right: 2px solid #ffc107;
+    }
+
+    @include mq(mobile) {
+      display: none;
+    }
+  }
 }
 
 [class^="xbt-Section"] {
@@ -264,4 +284,11 @@ footer {
     transform: skew(30deg);
     width: 40%;
   }
+}
+
+.xbt-ShareBlock {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
 }
