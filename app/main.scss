@@ -221,6 +221,8 @@ footer {
   color: $white;
   margin-right: 4em;
   max-width: 470px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1em;
 
   @include mq(mobile) {
     max-width: 320px;
@@ -249,13 +251,15 @@ footer {
   box-shadow: 1px 0 10px -4px;
   max-width: 500px;
   min-width: 250px;
-  margin-left: 4em;
+  margin-right: 4em;
+  right: 0;
   padding: 1em;
-  position: relative;
+  position: absolute;
 
   @include mq(mobile) {
     margin: 0 auto;
     max-width: 250px;
+    right: 1em;
   }
 
   h1 {
@@ -416,4 +420,9 @@ textarea {
   @include button-base;
   @include button-size-medium;
   @include button-color(#ffc107, #3e3e3e);
+}
+
+.xbt-FormTitle {
+  color: $white;
+  text-align: center;
 }
