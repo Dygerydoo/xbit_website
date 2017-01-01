@@ -1,0 +1,41 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='initial-scale=1.0, user-scalable=no')
+    // WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323
+    meta(name='viewport', content='user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi')
+    title XBIT
+    link(rel='stylesheet' href='/app.css')
+    script(src='/vendor.js')
+    script(src='/app.js')
+    script.
+      require('initialize');
+  body
+    nav.xbt-Navigation
+      p.xbt-MobileMenu_Show
+        span(data-menu="menu-mobile") MENU
+      ul.xbt-NavigationList
+        li.xbt-Navigation_Item
+          a(href="index.html") Seccion 1
+        li.xbt-Navigation_Item
+          a(href="#") Seccion 2
+        li.xbt-Navigation_Item
+          a(href="#") Seccion 3
+        li.xbt-Navigation_Item.active
+          a(href="contact.html") Contacto
+    include share_block
+    section.xbt-ContactSection
+      .xbt-ContactForm
+        h1= Título
+        form(name="add-estimation", method="post")
+        div.xbt-FormGroup
+          label Título
+          input(type="text", name="title")
+        div.xbt-FormGroup
+          label Descripción
+          textarea(name="description", cols="40", rows="5")
+        div.xbt-FormGroup
+          input.xbt-Button-primary(type="submit", value="Enviar")
+
+    include footer
