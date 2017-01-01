@@ -19,15 +19,12 @@ html(lang='en')
         li.xbt-Navigation_Item
           a(href="index.html") Inicio
         li.xbt-Navigation_Item
-          a(href="#") XBIT VR
+          a(href="vr.html") XBIT VR
         li.xbt-Navigation_Item.active
           a(href="contact.html") Contacto
     include share_block
     section.xbt-ContactSection
-      video(class="xbt-HeroBanner_Video" loop='', muted='', autoplay='', poster='img/hero_bg.jpg')
-        //- source(src='video/big_buck_bunny.webm', type='video/webm')
-        source(src='video/vbg.mp4', type='video/mp4')
-        //- source(src='video/big_buck_bunny.ogv', type='video/ogg')
+      include video_bg
       .xbt-ContactForm
         h1.xbt-FormTitle Contáctenos
         form(name="add-estimation", method="post")

@@ -212,9 +212,15 @@ footer {
   justify-content: flex-end;
 }
 
-.xbt-Section-three {
-  background: url('../images/s3.jpg') center center no-repeat;
+.xbt-SectionVR-one {
+  background: url('../images/vrs1.jpg') center center no-repeat;
   background-size: cover;
+}
+
+.xbt-SectionVR-two {
+  background: url('../images/vrs2.jpg') center center no-repeat;
+  background-size: cover;
+  justify-content: flex-end;
 }
 
 .text-block {
@@ -251,15 +257,13 @@ footer {
   box-shadow: 1px 0 10px -4px;
   max-width: 500px;
   min-width: 250px;
-  margin-right: 4em;
-  right: 0;
+  margin-left: 4em;
   padding: 1em;
   position: absolute;
 
   @include mq(mobile) {
     margin: 0 auto;
     max-width: 250px;
-    right: 1em;
   }
 
   h1 {
